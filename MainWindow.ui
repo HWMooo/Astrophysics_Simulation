@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlanetOrbits</class>
+ <widget class="QMainWindow" name="PlanetOrbits">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1276</width>
+    <height>778</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QScrollArea" name="planetListContents">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1250</width>
+         <height>268</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QComboBox" name="selectedPlanet">
+          <property name="toolTip">
+           <string>Select Planets or input custom planet data.</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Custom Planet</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mercury</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Venus</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Earth</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mars</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Jupiter</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Saturn</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uranus</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Neptune</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pluto</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addPlanetButton">
+          <property name="toolTip">
+           <string>Select a planet from the dropdown and click here to add to simulation. Shortcut:command P</string>
+          </property>
+          <property name="text">
+           <string>Add Planet</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+P</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="setDefaults">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Plots Earth and Mars. Shortcut: command O&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Setup Default Configuration</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+O</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Number of steps</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="timeStepValue">
+        <property name="toolTip">
+         <string>Input number of time steps</string>
+        </property>
+        <property name="minimum">
+         <number>2500</number>
+        </property>
+        <property name="maximum">
+         <number>300000</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>60000</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="horizontalSlider">
+        <property name="toolTip">
+         <string>Number of time steps.</string>
+        </property>
+        <property name="minimum">
+         <number>2500</number>
+        </property>
+        <property name="maximum">
+         <number>300000</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>60000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="MatPlotLibWidget" name="plotWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>300</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="plotButton">
+      <property name="toolTip">
+       <string>Plots planets once input is selected. Shortcut:command I</string>
+      </property>
+      <property name="text">
+       <string>Plot</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+I</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatPlotLibWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/MatPlotLibWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>timeStepValue</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>184</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>120</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeStepValue</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
